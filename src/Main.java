@@ -1,20 +1,36 @@
+import controllers.OrderController;
+import models.*;
+import views.StoreView;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Создание продуктов
+        Product product1 = new Product(1, "Laptop", 1000);
+        Product product2 = new Product(2, "Smartphone", 500);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-            System.out.println("CHE TAM BRAT");
-            System.out.println("CHE TAM BRAT");
-            System.out.println("CHE TAM BRAT");
+        // Создание и настройка MVC-компонентов
+        StoreView view = new StoreView();
+        Order order = new Order();
+        OrderController controller = new OrderController(view, order);
 
-        }
+        // Добавление продуктов в заказ
+        controller.addProductToOrder(product1);
+        controller.addProductToOrder(product2);
+
+        // Создание фасада для обработки заказа
+        OrderProcessingFacade facade = new OrderProcessingFacade();
+        facade.addProduct(product1);
+        facade.addProduct(product2);
+        facade.processOrder("paypal");
+
+        // Применение наблюдателя
+        OrderObserver observer = new OrderObserver() {
+            @Override
+            public void update(String status) {
+                System.out.println("Order status updated: " + status);
+            }
+        };
+        order.addObserver(observer);
+        order.setStatus("Shipped");
     }
 }
