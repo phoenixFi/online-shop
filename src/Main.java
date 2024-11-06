@@ -15,6 +15,8 @@ public class Main {
             System.out.println("CHE TAM BRAT");
             System.out.println("CHE TAM BRAT");
             System.out.println("SALAMALEIKUM");
+            System.out.println("SALAMALEIKUM");
+            System.out.println("SALAMALEIKUM");
         }
     }
 }
