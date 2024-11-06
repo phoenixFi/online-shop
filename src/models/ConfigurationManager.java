@@ -13,7 +13,6 @@ public class ConfigurationManager {
         }
         return instance;
     }
-
     public String getConfig(String key) {
         return config;
     }
