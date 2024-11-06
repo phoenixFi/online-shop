@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2be439d-832d-4336-80f7-4b6ac747bf95" name="Changes" comment="add product">
-      <change afterPath="$PROJECT_DIR$/src/models/ConfigurationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f2be439d-832d-4336-80f7-4b6ac747bf95" name="Changes" comment="added Singleton">
+      <change afterPath="$PROJECT_DIR$/src/models/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/PaymentFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +91,7 @@
       <updated>1730907513821</updated>
       <workItem from="1730907515385" duration="747000" />
       <workItem from="1730909838348" duration="712000" />
-      <workItem from="1730912108490" duration="3105000" />
+      <workItem from="1730912108490" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -157,15 +157,51 @@
       <option name="project" value="LOCAL" />
       <updated>1730913717994</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add product">
+      <option name="closed" value="true" />
+      <created>1730915377582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730915377582</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add product">
+      <option name="closed" value="true" />
+      <created>1730915397569</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730915397569</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added Singleton">
+      <option name="closed" value="true" />
+      <created>1730915412557</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730915412557</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="add product" />
-    <option name="LAST_COMMIT_MESSAGE" value="add product" />
+    <MESSAGE value="added Singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Singleton" />
   </component>
 </project>
