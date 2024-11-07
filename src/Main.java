@@ -9,7 +9,6 @@ public class Main {
         Product product1 = new Product(1, "Laptop", 1000.00);
         Product product2 = new Product(2, "Smartphone", 500.00);
 
-        // Создание заказа
         Order order = new Order();
 
         // Создание контроллера заказа

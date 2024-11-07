@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2be439d-832d-4336-80f7-4b6ac747bf95" name="Changes" comment="now its ordered">
-      <change afterPath="$PROJECT_DIR$/src/models/OrderObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/OrderProcessingFacade.java" afterDir="false" />
+    <list default="true" id="f2be439d-832d-4336-80f7-4b6ac747bf95" name="Changes" comment="fixed the latest bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/StoreView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConfigurationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ConfigurationManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +101,7 @@
       <updated>1730907513821</updated>
       <workItem from="1730907515385" duration="747000" />
       <workItem from="1730909838348" duration="712000" />
-      <workItem from="1730912108490" duration="7311000" />
+      <workItem from="1730912108490" duration="8176000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -210,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730915984089</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed the latest bugs">
+      <option name="closed" value="true" />
+      <created>1730956479285</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730956479285</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed the latest bugs">
+      <option name="closed" value="true" />
+      <created>1730956563835</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730956563835</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +246,7 @@
     <MESSAGE value="added Singleton" />
     <MESSAGE value="added factory for payment" />
     <MESSAGE value="now its ordered" />
-    <option name="LAST_COMMIT_MESSAGE" value="now its ordered" />
+    <MESSAGE value="fixed the latest bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the latest bugs" />
   </component>
 </project>
