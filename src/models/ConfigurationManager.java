@@ -13,7 +13,6 @@ public class ConfigurationManager {
         configs.put("payment.defaultMethod", "credit_card");
         configs.put("order.defaultStatus", "pending");
     }
-
     public static ConfigurationManager getInstance() {
         if (instance == null) {
             instance = new ConfigurationManager();
