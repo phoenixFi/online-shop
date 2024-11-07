@@ -1,4 +1,3 @@
-// views/StoreView.java
 package views;
 
 import controllers.OrderController;

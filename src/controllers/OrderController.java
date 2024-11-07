@@ -1,4 +1,3 @@
-
 package controllers;
 
 import models.Order;
@@ -12,6 +11,10 @@ public class OrderController{
 
     public OrderController(Order order) {
         this.order = order;
+    }
+
+    public OrderController() {
+
     }
 
     public void addProductToOrder(Product product) {
@@ -30,4 +33,5 @@ public class OrderController{
         double totalAmount = order.calculateTotal();
         paymentMethod.pay(totalAmount);
     }
+
 }
