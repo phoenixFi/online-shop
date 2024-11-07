@@ -1,31 +1,33 @@
-import controllers.OrderController;
+// Main.java
 import models.*;
+import controllers.OrderController;
 import views.StoreView;
 
 public class Main {
     public static void main(String[] args) {
-        Product product1 = new Product(1, "Laptop", 1000);
-        Product product2 = new Product(2, "Smartphone", 500);
+        // Создание продуктов
+        Product product1 = new Product(1, "Laptop", 1000.00);
+        Product product2 = new Product(2, "Smartphone", 500.00);
 
-        StoreView view = new StoreView();
+        // Создание заказа
         Order order = new Order();
-        OrderController controller = new OrderController(view, order);
 
-        controller.addProductToOrder(product1);
-        controller.addProductToOrder(product2);
+        // Создание контроллера заказа
+        OrderController orderController = new OrderController(order);
 
-        OrderProcessingFacade facade = new OrderProcessingFacade();
-        facade.addProduct(product1);
-        facade.addProduct(product2);
-        facade.processOrder("paypal");
+        // Добавление продуктов в заказ
+        orderController.addProductToOrder(product1);
+        orderController.addProductToOrder(product2);
 
-        OrderObserver observer = new OrderObserver() {
-            @Override
-            public void update(String status) {
-                System.out.println("Order status updated: " + status);
-            }
-        };
-        order.addObserver(observer);
-        order.setStatus("Shipped");
+        // Создание представления
+        StoreView view = new StoreView(orderController);
+
+        // Отображение общей стоимости заказа
+        view.displayOrderTotal();
+
+        // Выбор метода оплаты и обработка заказа
+        orderController.setPaymentMethod("credit_card");
+        orderController.processPayment();
+        view.displayPaymentConfirmation();
     }
 }

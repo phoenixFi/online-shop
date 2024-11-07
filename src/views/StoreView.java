@@ -1,16 +1,24 @@
+// views/StoreView.java
 package views;
 
-import models.Product;
-import java.util.List;
+import controllers.OrderController;
 
 public class StoreView {
-    public void displayProducts(List<Product> products) {
-        for (Product product : products) {
-            System.out.println("ID: " + product.getProductId() + ", Name: " + product.getName() + ", Price: $" + product.getPrice());
-        }
+    private OrderController orderController;
+
+    public StoreView(OrderController orderController) {
+        this.orderController = orderController;
     }
 
-    public void showMessage(String message) {
-        System.out.println(message);
+    public void displayOrderTotal() {
+        System.out.println("Order Total: $" + orderController.getOrderTotal());
+    }
+
+    public void displayPaymentConfirmation() {
+        System.out.println("Payment processed successfully!");
+    }
+
+    public void displayError(String message) {
+        System.out.println("Error: " + message);
     }
 }

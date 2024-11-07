@@ -1,25 +1,33 @@
+
 package controllers;
 
 import models.Order;
+import models.Payment;
+import models.PaymentFactory;
 import models.Product;
-import views.StoreView;
 
-public class OrderController {
-    private StoreView view;
+public class OrderController{
     private Order order;
+    private Payment paymentMethod;
 
-    public OrderController(StoreView view, Order order) {
-        this.view = view;
+    public OrderController(Order order) {
         this.order = order;
     }
 
     public void addProductToOrder(Product product) {
         order.addProduct(product);
-        view.showMessage(product.getName() + " added to the order.");
     }
 
-    public void checkout() {
-        double total = order.calculateTotal();
-        view.showMessage("Total order price: $" + total);
+    public double getOrderTotal() {
+        return order.calculateTotal();
+    }
+
+    public void setPaymentMethod(String paymentMethodType) {
+        this.paymentMethod = PaymentFactory.createPayment(paymentMethodType);
+    }
+
+    public void processPayment() {
+        double totalAmount = order.calculateTotal();
+        paymentMethod.pay(totalAmount);
     }
 }
