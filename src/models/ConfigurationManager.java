@@ -1,12 +1,18 @@
 
 package models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ConfigurationManager {
     private static ConfigurationManager instance;
-    private String config;
+    private Map<String, String> configs;
 
-    private ConfigurationManager() {}
-
+    private ConfigurationManager() {
+        configs = new HashMap<>();
+        configs.put("payment.defaultMethod", "credit_card");
+        configs.put("order.defaultStatus", "pending");
+    }
     public static ConfigurationManager getInstance() {
         if (instance == null) {
             instance = new ConfigurationManager();
@@ -14,11 +20,11 @@ public class ConfigurationManager {
         return instance;
     }
 
-    public String getConfig(String key) {
-        return config;
+    public void setConfig(String key, String value) {
+        configs.put(key, value);
     }
 
-    public void setConfig(String key, String value) {
-        this.config = value;
+    public String getConfig(String key) {
+        return configs.getOrDefault(key, "");
     }
 }

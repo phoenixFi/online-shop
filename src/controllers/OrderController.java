@@ -1,16 +1,25 @@
 package controllers;
 
-import models.Order;
-import models.Payment;
-import models.PaymentFactory;
-import models.Product;
+import models.*;
 
-public class OrderController{
+public class OrderController {
     private Order order;
     private Payment paymentMethod;
 
     public OrderController(Order order) {
         this.order = order;
+        ConfigurationManager configManager = ConfigurationManager.getInstance();
+        String defaultStatus = configManager.getConfig("order.defaultStatus");
+        order.setStatus(defaultStatus);
+    }
+
+    public void setPaymentMethod(String method) {
+        ConfigurationManager configManager = ConfigurationManager.getInstance();
+        String defaultPaymentMethod = configManager.getConfig("payment.defaultMethod");
+        if (method == null) {
+            method = defaultPaymentMethod;
+        }
+        this.paymentMethod = PaymentFactory.createPayment(method);
     }
 
     public OrderController() {
@@ -25,13 +34,12 @@ public class OrderController{
         return order.calculateTotal();
     }
 
-    public void setPaymentMethod(String paymentMethodType) {
-        this.paymentMethod = PaymentFactory.createPayment(paymentMethodType);
-    }
-
     public void processPayment() {
-        double totalAmount = order.calculateTotal();
-        paymentMethod.pay(totalAmount);
+        if (paymentMethod != null) {
+            paymentMethod.pay(order.calculateTotal());
+        } else {
+            System.out.println("No payment method selected.");
+        }
     }
 
 }
