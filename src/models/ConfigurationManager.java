@@ -14,7 +14,6 @@ public class ConfigurationManager {
         configs.put("order.defaultStatus", "pending");
     }
 
-
     public static ConfigurationManager getInstance() {
         if (instance == null) {
             instance = new ConfigurationManager();
