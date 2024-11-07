@@ -9,7 +9,6 @@ public class OrderProcessingFacade {
         this.order = order;
         this.payment = payment;
     }
-
     public void processOrder() {
         double totalAmount = order.calculateTotal();
         payment.pay(totalAmount);
